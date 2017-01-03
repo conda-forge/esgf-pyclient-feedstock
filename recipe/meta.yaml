@@ -1,7 +1,7 @@
 {% set name = "esgf-pyclient" %}
-{% set version = "0.1.6" %}
+{% set version = "0.1.8" %}
 {% set hash_type = "md5" %}
-{% set hash_val = "228ac9d7e3a600f587c7cb46c7389cdc" %}
+{% set hash_val = "754d7e1e3128ef4d5ac481e4bb751ef7" %}
 
 package:
   name: {{ name|lower }}
