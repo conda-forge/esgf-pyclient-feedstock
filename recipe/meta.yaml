@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [py3k]
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -35,10 +35,8 @@ test:
 about:
   home: http://esgf-pyclient.readthedocs.org
   license: BSD 3-clause
+  license_file: LICENSE
   summary: 'A library interacting with ESGF services within Python'
-  # Please remember to add the license file after the PR is merged and included in a release.
-  # https://github.com/ESGF/esgf-pyclient/pull/7
-  # license_file: LICENSE
 
 extra:
   recipe-maintainers:
