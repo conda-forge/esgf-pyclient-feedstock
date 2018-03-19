@@ -1,7 +1,7 @@
 {% set name = "esgf-pyclient" %}
-{% set version = "0.1.8" %}
+{% set version = "0.2.1" %}
 {% set hash_type = "md5" %}
-{% set hash_val = "754d7e1e3128ef4d5ac481e4bb751ef7" %}
+{% set hash_val = "e4da044b3cd2e598aa2337811fe80178" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [py3k]
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
