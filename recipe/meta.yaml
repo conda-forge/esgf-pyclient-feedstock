@@ -1,30 +1,29 @@
 {% set name = "esgf-pyclient" %}
-{% set version = "0.1.8" %}
-{% set hash_type = "md5" %}
-{% set hash_val = "754d7e1e3128ef4d5ac481e4bb751ef7" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  sha256: 35778bd411c976192bc581e41d7c80e5151dabc60277c35f2700c9af13dd63c2
 
 build:
-  skip: True  # [py3k]
-  number: 1001
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - jinja2
+    - requests
+    - requests_cache
+    - six
 
 test:
   imports:
@@ -43,3 +42,4 @@ extra:
     - agoodm
     - jarifibrahim
     - agstephens
+    - cehbrecht
