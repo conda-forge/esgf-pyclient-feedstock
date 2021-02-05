@@ -1,5 +1,5 @@
 {% set name = "esgf-pyclient" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 35778bd411c976192bc581e41d7c80e5151dabc60277c35f2700c9af13dd63c2
+  sha256: 17756bcc6a3b60b40591a4e8d06706a6ca7a19a85fc67bf9a3c7058fbdf963ca
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,9 +33,9 @@ test:
 
 about:
   home: http://esgf-pyclient.readthedocs.org
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'A library interacting with ESGF services within Python'
+  summary: A library interacting with ESGF services within Python
 
 extra:
   recipe-maintainers:
