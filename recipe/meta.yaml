@@ -23,6 +23,7 @@ requirements:
     - jinja2
     - requests
     - requests_cache
+    - webob
 
 test:
   imports:
