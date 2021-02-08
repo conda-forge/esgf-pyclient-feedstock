@@ -19,11 +19,10 @@ requirements:
     - python
     - pip
   run:
-    - python
+    - python >=3.6
     - jinja2
     - requests
     - requests_cache
-    - six
 
 test:
   imports:
