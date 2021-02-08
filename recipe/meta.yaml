@@ -1,5 +1,5 @@
 {% set name = "esgf-pyclient" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 17756bcc6a3b60b40591a4e8d06706a6ca7a19a85fc67bf9a3c7058fbdf963ca
+  sha256: 616ad5e1b0d04733779a88db3ddf5984ea287e70f3d7ad096c3a26664b693381
 
 build:
   number: 0
