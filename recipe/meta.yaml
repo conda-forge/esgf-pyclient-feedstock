@@ -24,6 +24,8 @@ requirements:
     - requests
     - requests_cache
     - webob
+    - defusedxml
+    - myproxyclient
 
 test:
   imports:
