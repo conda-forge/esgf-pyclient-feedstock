@@ -10,7 +10,7 @@ source:
   sha256: 616ad5e1b0d04733779a88db3ddf5984ea287e70f3d7ad096c3a26664b693381
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,6 +24,8 @@ requirements:
     - requests
     - requests_cache
     - webob
+    - defusedxml
+    - myproxyclient
 
 test:
   imports:
