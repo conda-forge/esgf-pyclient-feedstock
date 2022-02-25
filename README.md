@@ -118,6 +118,7 @@ Feedstock Maintainers
 
 * [@agoodm](https://github.com/agoodm/)
 * [@agstephens](https://github.com/agstephens/)
+* [@bouweandela](https://github.com/bouweandela/)
 * [@cehbrecht](https://github.com/cehbrecht/)
 * [@jarifibrahim](https://github.com/jarifibrahim/)
 
