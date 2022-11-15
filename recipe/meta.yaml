@@ -22,7 +22,7 @@ requirements:
     - python >=3.6
     - jinja2
     - requests
-    - requests-cache >=0.9.6
+    - requests-cache >=0.6
     - webob
     - defusedxml
     - myproxyclient
