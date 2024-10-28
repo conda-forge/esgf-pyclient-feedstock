@@ -24,7 +24,7 @@ requirements:
     - jinja2
     - requests
     - requests-cache >=0.6
-    - webob >=1.8.9  # Python 3.13 support github.com/ESGF/esgf-pyclient/pull/109 
+    - webob >=1.8.9  # supports Python 3.13 github.com/ESGF/esgf-pyclient/pull/109 
     - defusedxml
     - myproxyclient >=2.1.1
 
