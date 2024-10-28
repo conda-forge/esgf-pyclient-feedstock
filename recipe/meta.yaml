@@ -16,8 +16,9 @@ build:
 
 requirements:
   host:
-    - python
-    - pip
+    - python >=3.9
+    - setuptools_scm
+    - pip !=21.3
   run:
     - python >=3.9
     - jinja2
