@@ -10,20 +10,21 @@ source:
   sha256: d79fafc6ec2a1eff9645e098554103f1e9f3c270947b1ac4f4a8a07fece59f3b
 
 build:
-  number: 3
+  number: 4
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python
-    - pip
+    - python >=3.9
+    - setuptools_scm
+    - pip !=21.3
   run:
-    - python >=3.6
+    - python >=3.9
     - jinja2
     - requests
     - requests-cache >=0.6
-    - webob
+    - webob >=1.8.9  # supports Python 3.13 github.com/ESGF/esgf-pyclient/pull/109
     - defusedxml
     - myproxyclient >=2.1.1
 
