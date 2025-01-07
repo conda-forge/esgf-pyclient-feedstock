@@ -6,21 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d79fafc6ec2a1eff9645e098554103f1e9f3c270947b1ac4f4a8a07fece59f3b
 
 build:
-  number: 4
+  number: 5
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
+    - setuptools
     - setuptools_scm
     - pip !=21.3
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - jinja2
     - requests
     - requests-cache >=0.6
@@ -29,6 +30,8 @@ requirements:
     - myproxyclient >=2.1.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pyesgf
     - pyesgf.search
