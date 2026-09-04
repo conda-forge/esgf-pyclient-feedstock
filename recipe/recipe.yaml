@@ -1,27 +1,30 @@
-{% set name = "esgf-pyclient" %}
-{% set version = "0.3.1" %}
+schema_version: 1
+
+context:
+  name: esgf-pyclient
+  version: "0.3.1"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: d79fafc6ec2a1eff9645e098554103f1e9f3c270947b1ac4f4a8a07fece59f3b
 
 build:
-  number: 5
+  number: 6
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
     - setuptools_scm
     - pip !=21.3
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - jinja2
     - requests
     - requests-cache >=0.6
@@ -29,20 +32,20 @@ requirements:
     - defusedxml
     - myproxyclient >=2.1.1
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - pyesgf
-    - pyesgf.search
-    - pyesgf.security
-    - pyesgf.logon
-
+tests:
+  - python:
+      imports:
+        - pyesgf
+        - pyesgf.search
+        - pyesgf.security
+        - pyesgf.logon
+      pip_check: false
+      python_version: ${{ python_min }}
 about:
-  home: http://esgf-pyclient.readthedocs.org
   license: BSD-3-Clause
   license_file: LICENSE
   summary: A library interacting with ESGF services within Python
+  homepage: http://esgf-pyclient.readthedocs.org
 
 extra:
   recipe-maintainers:
