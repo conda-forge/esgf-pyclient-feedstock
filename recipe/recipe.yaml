@@ -39,8 +39,10 @@ tests:
         - pyesgf.search
         - pyesgf.security
         - pyesgf.logon
-      pip_check: false
-      python_version: ${{ python_min }}
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 about:
   license: BSD-3-Clause
   license_file: LICENSE
