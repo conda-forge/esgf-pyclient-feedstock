@@ -11,9 +11,11 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: d79fafc6ec2a1eff9645e098554103f1e9f3c270947b1ac4f4a8a07fece59f3b
+  patches:
+    - drop-myproxyclient-dependency.txt
 
 build:
-  number: 6
+  number: 7
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
@@ -30,7 +32,6 @@ requirements:
     - requests-cache >=0.6
     - webob >=1.8.9  # supports Python 3.13 github.com/ESGF/esgf-pyclient/pull/109
     - defusedxml
-    - myproxyclient >=2.1.1
 
 tests:
   - python:

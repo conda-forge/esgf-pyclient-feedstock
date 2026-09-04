@@ -1,0 +1,9 @@
+diff --git a/requirements.txt b/requirements.txt
+index 8c73146..e456b52 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -3,4 +3,3 @@ jinja2
+ requests
+ requests_cache
+ webob
+-myproxyclient
