@@ -2,20 +2,20 @@ schema_version: 1
 
 context:
   name: esgf-pyclient
-  version: "0.3.1"
+  version: "0.3.2"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: d79fafc6ec2a1eff9645e098554103f1e9f3c270947b1ac4f4a8a07fece59f3b
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 665b8a4faa1ab03475d138c6c1690bb34d21b6d77b3f859c4fd57435ceda3e29
   patches:
     - drop-myproxyclient-dependency.txt
 
 build:
-  number: 7
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
